@@ -18,7 +18,7 @@ use App\Http\Controllers\WelcomeController;
 
 Route::get('/', [WelcomeController::class, 'index']);
 
-Route::get('/users/list', [UserController::class, 'index'])->middleware('auth');
+Route::get('/users/list', [UserController::class, 'index'])->name('users.list')->middleware('auth');
 Route::delete('/users/{user}', [UserController::class, 'destroy'])->middleware('auth');
 
 Route::get('/products', [ProductController::class, 'index'])->name('products.index')->middleware('auth');
